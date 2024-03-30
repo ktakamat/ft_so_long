@@ -6,11 +6,11 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:08:29 by machi             #+#    #+#             */
-/*   Updated: 2024/03/30 19:09:25 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/03/30 19:48:15 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "so_long.h"
 
 char	*read_file(int fd, char *save)
 {

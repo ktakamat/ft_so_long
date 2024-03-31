@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/03/30 18:09:26 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/03/31 16:34:01 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,53 +14,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-# define X_EVENT_KEY_PRESS			2
-# define X_EVENT_KEY_RELEASE		3
-
-# define KEY_ESC		53
-# define KEY_W			13
-# define KEY_A			0
-# define KEY_S			1
-# define KEY_D			2
-
-typedef struct s_param{
-	int		x;
-	int		y;
-}				t_param;
-
-void			param_init(t_param *param)
+int main(int ac, char *av[])
 {
-	param->x = 3;
-	param->y = 4;
-}
+	void *mlx;
+	void *win;
+	void *img;
+	void *img2;
+	void *img3;
+	void *img4;
+	void *img5;
+	void *img6;
+	void *img7;
+	int img_width;
+	int img_height;
 
-int				key_press(int keycode, t_param *param)
-{
-	static int a = 0;
-
-	if (keycode == KEY_W)
-		param->y++;
-	else if (keycode == KEY_S)
-		param->y--;
-	else if (keycode == KEY_A)
-		param->x--;
-	else if (keycode == KEY_D)
-		param->x++;
-	else if (keycode == KEY_ESC)
-		exit(0);
-	printf("x: %d, y: %d\n", param->x, param->y);
-	return (0);
-}
-
-int			main(void)
-{
-	void		*mlx;
-	void		*win;
-	t_param		param;
-
-	param_init(&param);
 	mlx = mlx_init();
-	win = mlx_new_window(mlx, 500, 500, "mlx_project");
-	mlx_hook(win, X_EVENT_KEY_RELEASE, 0, &key_press, &param);
+	
+	win = mlx_new_window(mlx, 500, 500, "my_mlx");
+	img = mlx_xpm_file_to_image(mlx, "./images/land.xpm", &img_width, &img_height);
+	img2 = mlx_xpm_file_to_image(mlx, "./images/wall.xpm", &img_width, &img_height);
+	img3 = mlx_xpm_file_to_image(mlx, "./images/chara.xpm", &img_width, &img_height);
+	img4 = mlx_xpm_file_to_image(mlx, "./images/chest.xpm", &img_width, &img_height);
+	img6 = mlx_xpm_file_to_image(mlx, "./images/rune.xpm", &img_width, &img_height);
+	img7 = mlx_xpm_file_to_image(mlx, "./images/rune_light.xpm", &img_width, &img_height);
+
 	mlx_loop(mlx);
+	map_read(av[1]);
+	(void)ac;
+	(void)img5;
+	return (0);
 }

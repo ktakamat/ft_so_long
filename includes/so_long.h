@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/03/30 19:46:01 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/03/31 16:38:56 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
-# define LAND "./textures/land.xpm"
-# define WALL "./textures/wall.xpm"
-# define CHA "./textures/chara.xpm"
-# define CHE "./textures/chest.xpm"
-# define RUNE "./textures/rune.xpm"
-# define RUNL "./textures/rune_l.xpm"
+// # define LAND "./textures/land.xpm"
+// # define WALL "./textures/wall.xpm"
+// # define CHA "./textures/chara.xpm"
+// # define CHE "./textures/chest.xpm"
+// # define RUNE "./textures/rune.xpm"
+// # define RUNL "./textures/rune_l.xpm"
 
 # ifndef BUFFER_SIZE
 
@@ -84,6 +84,13 @@ typedef struct s_map{
 	int		xi;
 	int		yi;
 }	t_map;
+
+typedef struct s_game
+{
+	ssize_t		hei;
+	ssize_t		wid;
+	char		*str_line;
+}t_game;
 
 void	map_read(char *map, t_map *game);
 void	setting_img(t_map game);

@@ -6,7 +6,7 @@
 #    By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 17:11:04 by ktakamat          #+#    #+#              #
-#    Updated: 2024/03/31 16:24:20 by ktakamat         ###   ########.fr        #
+#    Updated: 2024/03/31 17:14:42 by ktakamat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ INCLUDES_DIR = ./Includes
 CFLAGS = -Wall -Wextra -Werror -I$(INCLUDES_DIR)
 
 SRCS = main.c \
-		map.c
+		map.c \
+		get_next_line.c
 
 
 OBJS = $(SRCS:%.c=%.o)

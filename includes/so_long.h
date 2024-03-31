@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/03/31 16:38:56 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/03/31 17:15:11 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ typedef struct s_game
 	char		*str_line;
 }t_game;
 
-void	map_read(char *map, t_map *game);
+void map_read(char *filename, t_game *game);
 void	setting_img(t_map game);
+char	*get_next_line(int fd);
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: machi <machi@student.42.fr>                +#+  +:+       +#+         #
+#    By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 21:10:02 by machi             #+#    #+#              #
-#    Updated: 2023/10/02 21:22:01 by machi            ###   ########.fr        #
+#    Updated: 2024/03/31 16:51:13 by ktakamat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,20 +60,20 @@ SRCS = ft_atoi.c \
 
 OBJS = $(SRCS:%.c=%.o)
 
-SRCS += ./printf/ft_print_char.c \
-		./printf/ft_print_hex.c \
-		./printf/ft_print_ptr.c \
-		./printf/ft_printf.c \
-		./printf/ft_print_str.c \
-		./printf/ft_print_unbr.c \
-		./printf/ft_print_nbr.c
-OBJS += ./printf/ft_print_char.o \
-		./printf/ft_print_hex.o \
-		./printf/ft_print_ptr.o \
-		./printf/ft_printf.o \
-		./printf/ft_print_str.o \
-		./printf/ft_print_unbr.o \
-		./printf/ft_print_nbr.o
+SRCS += ft_print_char.c \
+		ft_print_hex.c \
+		ft_print_ptr.c \
+		ft_printf.c \
+		ft_print_str.c \
+		ft_print_unbr.c \
+		ft_print_nbr.c
+OBJS += ft_print_char.o \
+		ft_print_hex.o \
+		ft_print_ptr.o \
+		ft_printf.o \
+		ft_print_str.o \
+		ft_print_unbr.o \
+		ft_print_nbr.o
 INCL += -Ift_printf.h
 
 # SRCS += ./gnl/get_next_line_utils.c \

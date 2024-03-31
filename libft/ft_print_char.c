@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 20:14:14 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/03/31 17:56:01 by ktakamat         ###   ########.fr       */
+/*   Created: 2023/06/28 14:42:12 by machi             #+#    #+#             */
+/*   Updated: 2023/08/29 15:55:10 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putchar(char c)
 {
-	char	*str;
-	char	a;
+	write(1, &c, 1);
+}
 
-	a = (char)c;
-	str = (char *)s;
-	printf("ppap/n");
-	while (*str != '\0')
-	{
-		if (*str == a)
-		{
-			return (str);
-		}
-		str++;
-	}
-	if (a == '\0')
-	{
-		return (str);
-	}
-	return (NULL);
+int	ft_print_char(char c)
+{
+	int	count;
+
+	count = 0;
+	ft_putchar(c);
+	count++;
+	return (count);
 }

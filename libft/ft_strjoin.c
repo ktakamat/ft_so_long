@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:55:35 by machi             #+#    #+#             */
-/*   Updated: 2023/05/26 17:12:32 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/01 14:21:39 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*a;
-	int		i;
-	int		j;
+	char	*result;
+	size_t	len_s1;
+	size_t	len_s2;
+	size_t	i;
 
-	i = 0;
-	j = 0;
-	if (s1 == NULL || s2 == NULL)
+	if (!s1)
+		s1 = ft_strdup("");
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	result = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	if (!result)
 		return (NULL);
-	a = (char *)malloc(sizeof(*a) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
-	if (a == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
+	i = -1;
+	while (s1[++i] != '\0')
+		result[i] = s1[i];
+	i = -1;
+	while (s2[++i] != '\0')
 	{
-		a[i] = s1[i];
-		i++;
+		result[len_s1] = s2[i];
+		len_s1++;
 	}
-	while (s2[j] != '\0')
-	{
-		a[i] = s2[j];
-		i++;
-		j++;
-	}
-	a[i] = '\0';
-	return (a);
+	result[len_s1] = '\0';
+	free((void *)s1);
+	return (result);
 }

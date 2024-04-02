@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/03/31 17:15:11 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/01 17:12:04 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <string.h>
 # include <limits.h>
 # include <fcntl.h>
-# include	"mlx.h"
+# include	"../mlx/mlx.h"
 # include "../libft/libft.h"
 # include "../libft/ft_printf.h"
 # include <stdbool.h>
@@ -87,13 +87,33 @@ typedef struct s_map{
 
 typedef struct s_game
 {
-	ssize_t		hei;
-	ssize_t		wid;
+	t_mlx		mlx;
+	t_img		img;
+	size_t		hei;
+	size_t		wid;
 	char		*str_line;
+	int	col_cnt;
+	int	all_col;
+	int		walk_cnt;
 }t_game;
 
+
 void map_read(char *filename, t_game *game);
-void	setting_img(t_map game);
+void	setting_img(t_game game);
 char	*get_next_line(int fd);
+char	*read_file(int fd, char *save);
+char	*get_line(char *save);
+char	*reset_save(char *save);
+char    *ft_strjoin_new(char const *s1, char const *s2);
+int	press_key(int key_code, t_game *game);
+void	move_w(t_game *g);
+void	move_s(t_game *g);
+void	move_a(t_game *g);
+void	move_d(t_game *g);
+int	clear_game(t_game *game);
+int	exit_game(t_game *game);
+
+
+
 
 #endif

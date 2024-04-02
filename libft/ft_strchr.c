@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 20:14:14 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/03/31 17:56:01 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:18:32 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
-	char	a;
+	char			*ptr;
+	unsigned char	uc;
+	size_t			len;
+	size_t			i;
 
-	a = (char)c;
-	str = (char *)s;
-	printf("ppap/n");
-	while (*str != '\0')
+	if (!s)
+		return (NULL);
+	ptr = NULL;
+	uc = (unsigned char)c;
+	len = ft_strlen(s);
+	i = 0;
+	while (i <= len)
 	{
-		if (*str == a)
+		if (*s == uc)
 		{
-			return (str);
+			ptr = (char *)(s);
+			return (ptr);
 		}
-		str++;
+		s++;
+		i++;
 	}
-	if (a == '\0')
-	{
-		return (str);
-	}
-	return (NULL);
+	return (ptr);
 }

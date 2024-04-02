@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: machi <machi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 17:11:04 by ktakamat          #+#    #+#              #
-#    Updated: 2024/03/31 17:14:42 by ktakamat         ###   ########.fr        #
+#    Updated: 2024/04/01 16:29:08 by machi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CFLAGS = -Wall -Wextra -Werror -I$(INCLUDES_DIR)
 
 SRCS = main.c \
 		map.c \
-		get_next_line.c
+		get_next_line.c \
+		move.c
 
 
 OBJS = $(SRCS:%.c=%.o)

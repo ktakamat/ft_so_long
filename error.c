@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:12:23 by machi             #+#    #+#             */
-/*   Updated: 2024/04/03 15:06:34 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/03 17:18:37 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,24 @@ void	no_item(t_game *game)
 		printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
+}
+
+void	last_line(t_game *game)
+{
+	size_t	index = game->hei -  1;
+	size_t	expected_width = game->wid;
+	size_t	last_width = 0;
+	size_t	i = index * game->wid;
+
+	while(game->str_line[i] != '\0')
+	{
+		last_width++;
+		i++;
+	}
+	if (last_width != expected_width)
+	{
+		printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	
 }

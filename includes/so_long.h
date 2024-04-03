@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/03 14:55:19 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/03 15:07:07 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,8 @@ void	move_a(t_game *g);
 void	move_d(t_game *g);
 int	clear_game(t_game *game);
 int	exit_game(t_game *game);
-void	num_chara(t_game *game);
+void	num_chara_goal(t_game *game);
+void	no_item(t_game *game);
 
 
 

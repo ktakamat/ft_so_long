@@ -6,7 +6,7 @@
 #    By: machi <machi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 17:11:04 by ktakamat          #+#    #+#              #
-#    Updated: 2024/04/01 16:29:08 by machi            ###   ########.fr        #
+#    Updated: 2024/04/03 14:55:35 by machi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CFLAGS = -Wall -Wextra -Werror -I$(INCLUDES_DIR)
 SRCS = main.c \
 		map.c \
 		get_next_line.c \
-		move.c
+		move.c\
+		error.c
 
 
 OBJS = $(SRCS:%.c=%.o)

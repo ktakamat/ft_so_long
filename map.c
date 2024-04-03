@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:39:06 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/02 19:49:50 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/02 22:14:54 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,21 +83,28 @@ void	setting_img(t_game game)
 	{
 		wid = 0;
 		while (wid < game.wid)
-		{			if (game.str_line[hei * game.wid + wid] == '1')
+		{			
+			char alpha = game.str_line[hei * game.wid + wid];
+			if (alpha == '1')
 			{
 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.wall, wid * 50, hei * 50);
 			}
-			else if (game.str_line[hei * game.wid + wid] == 'C')
+			else if (alpha == 'C')
 			{
 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.chest, wid * 50, hei * 50);
 			}
-			else if (game.str_line[hei * game.wid + wid] == 'P')
+			else if (alpha == 'P')
 			{
 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.chara, wid * 50, hei * 50);
 			}
-			else if (game.str_line[hei * game.wid + wid] == 'E')
+			else if (alpha == 'E')
 			{
 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.rune, wid * 50, hei * 50);
+			}
+			else if(alpha != '1' || alpha != 'C' || alpha != 'P' || alpha != 'E')
+			{
+				printf("Error\n");
+				exit(EXIT_FAILURE);
 			}
 			else
 			{

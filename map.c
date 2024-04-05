@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:39:06 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/03 17:21:03 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/03 18:49:34 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void map_read(char *filename, t_game *game)
 	line = get_next_line(fd);
 	if(line == NULL || *line == '\0')
 	{
-		printf("Error\n");
+		printf("empty_Error\n");
 		exit(EXIT_FAILURE);
 	}
 	if (line[ft_strlen(line) - 1] == '\n')
@@ -101,11 +101,11 @@ void	setting_img(t_game game)
 			{
 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.rune, wid * 50, hei * 50);
 			}
-			else if(alpha != '1' || alpha != 'C' || alpha != 'P' || alpha != 'E')
-			{
-				printf("Error\n");
-				exit(EXIT_FAILURE);
-			}
+			// else if (alpha != '1' && alpha != 'C' && alpha != 'P' && alpha != 'E')
+			// {
+			// 	printf("henamozi_Error\n");
+			// 	exit(EXIT_FAILURE);
+			// }
 			else
 			{
 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.land, wid * 50, hei * 50);
@@ -114,4 +114,17 @@ void	setting_img(t_game game)
 		}
 		hei++;
 	}
+}
+
+void check_first_line(t_game *game) {
+    size_t wid = 0;
+	
+    while (wid < game->wid) {
+        char alpha = game->str_line[wid];
+        if (alpha != '1' && alpha != 'C' && alpha != 'P' && alpha != 'E') {
+            printf("Invalid character encountered at the first line\n");
+            exit(EXIT_FAILURE);
+        }
+        wid++;
+    }
 }

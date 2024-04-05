@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/03 15:07:25 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/05 19:20:20 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,11 @@ int main(int ac, char **av)
 	mlx_key_hook(win, &press_key, &game);
 	(void)ac;
 	setting_img(game);
+	check_first_line(&game);
 	num_chara_goal(&game);
 	no_item(&game);
+	last_line(&game);
+	// check_goal_reachable(&game);
 	game.all_col = 1;
 	mlx_loop(mlx);
 	return (0);

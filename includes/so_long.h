@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/03 15:07:07 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/05 18:42:32 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,11 @@ int	clear_game(t_game *game);
 int	exit_game(t_game *game);
 void	num_chara_goal(t_game *game);
 void	no_item(t_game *game);
-
+void check_first_line(t_game *game);
+void	last_line(t_game *game);
+void check_goal_reachable(t_game *game);
+void find_p_position(t_game *game, size_t *p_x, size_t *p_y);
+int can_reach_end(t_game *game, size_t x, size_t y);
 
 
 

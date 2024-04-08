@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 03:33:22 by machi             #+#    #+#             */
-/*   Updated: 2024/04/08 20:25:06 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/08 20:55:54 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	find_p(t_game *game)
 	return(0);
 }
 
-bool	pass_find(t_map *game, bool *visited, t_stack *stack)
+bool	pass_find(t_game *game, bool *visited, t_stack *stack)
 {
 	int			i;
 	static int	dx[] = {-1, 0, 1, 0};
@@ -51,7 +51,7 @@ bool	pass_find(t_map *game, bool *visited, t_stack *stack)
 		{
 			game->xi = cur.x + dx[i];
 			game->yi = cur.y + dy[i];
-			can_pass(game, stack, visited);
+			can_pass(game, visited, stack);
 			i++;
 		}
 	}

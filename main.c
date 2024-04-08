@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/05 19:20:20 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/08 21:06:46 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ int main(int ac, char **av)
 	mlx_key_hook(win, &press_key, &game);
 	(void)ac;
 	setting_img(game);
+	if (reach_E(&game))
+	{
+		printf("goal_dekiru\n");
+	}
+	else
+	{
+		printf("goal_dekinai\n");
+	}
 	check_first_line(&game);
 	num_chara_goal(&game);
 	no_item(&game);

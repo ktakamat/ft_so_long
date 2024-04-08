@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/08 20:23:23 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/08 20:54:51 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void	can_pass(t_game *game, bool *visited, t_stack *stack);
 void	terms_pass(t_game *game, bool *visited, t_stack *stack);
 bool	reach_goal(t_game *game, size_t x, size_t y);
 size_t	find_p(t_game *game);
-bool	pass_find(t_map *game, bool *visited, t_stack *stack);
+bool	pass_find(t_game *game, bool *visited, t_stack *stack);
 bool	reach_E(t_game *game);
 
 #endif

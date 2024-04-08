@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/05 18:42:32 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/08 20:23:23 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,20 @@ typedef struct s_map{
 
 typedef struct s_game
 {
-	t_mlx		mlx;
-	t_img		img;
-	size_t		hei;
-	size_t		wid;
-	char		*str_line;
-	int	col_cnt;
-	int	all_col;
+	t_mlx	mlx;
+	t_img	img;
+	size_t	hei;
+	size_t	wid;
+	char	*str_line;
+	char	col_cnt;
+	char	all_col;
 	int		walk_cnt;
-}t_game;
-
+	int		flag;
+	int		top;
+	int		now_col;
+	int		xi;
+	int		yi;
+}	t_game;
 
 void map_read(char *filename, t_game *game);
 void	setting_img(t_game game);
@@ -119,7 +123,13 @@ void	last_line(t_game *game);
 void check_goal_reachable(t_game *game);
 void find_p_position(t_game *game, size_t *p_x, size_t *p_y);
 int can_reach_end(t_game *game, size_t x, size_t y);
-
-
+bool	check_o(t_game *game, size_t x, size_t y);
+bool	check_E(t_game *game, size_t x, size_t y);
+void	can_pass(t_game *game, bool *visited, t_stack *stack);
+void	terms_pass(t_game *game, bool *visited, t_stack *stack);
+bool	reach_goal(t_game *game, size_t x, size_t y);
+size_t	find_p(t_game *game);
+bool	pass_find(t_map *game, bool *visited, t_stack *stack);
+bool	reach_E(t_game *game);
 
 #endif

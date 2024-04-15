@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:12:23 by machi             #+#    #+#             */
-/*   Updated: 2024/04/03 19:01:34 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/13 19:02:55 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,8 @@ void	num_chara_goal(t_game *game)
 		}
 		hei++;
 	}
-	if (p_count == 0)
-	{
-		printf("No_P_Error\n");
-		exit(EXIT_FAILURE);
-	}
-	else if(p_count > 1)
-	{
-		printf("Many_P_Error\n");
-		exit(EXIT_FAILURE);
-	}
-	if (e_count == 0)
-	{
-		printf("No_E_Error\n");
-		exit(EXIT_FAILURE);
-	}
-	else if(e_count > 1)
-	{
-		printf("Many_E_Error\n");
-		exit(EXIT_FAILURE);
-	}
+	if (p_count == 0 || p_count > 1 || e_count == 0 || e_count > 1)
+		ft_exit();
 }
 
 void	no_item(t_game *game)
@@ -71,10 +53,7 @@ void	no_item(t_game *game)
 		hei++;
 	}
 	if (c_count == 0)
-	{
-		printf("N0_C_Error\n");
-		exit(EXIT_FAILURE);
-	}
+		ft_exit();
 }
 
 void	last_line(t_game *game)
@@ -90,8 +69,11 @@ void	last_line(t_game *game)
 		i++;
 	}
 	if (last_width != expected_width)
-	{
-		printf("Lastline_short_Error\n");
-		exit(EXIT_FAILURE);
-	}
+		ft_exit();
+}
+
+void	ft_exit(void)
+{
+	printf("Error\n");
+	exit(EXIT_FAILURE);
 }

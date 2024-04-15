@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/08 20:54:51 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/13 19:03:47 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ typedef struct s_game
 	int		now_col;
 	int		xi;
 	int		yi;
+	int		error_item;
 }	t_game;
 
 void map_read(char *filename, t_game *game);
@@ -131,5 +132,11 @@ bool	reach_goal(t_game *game, size_t x, size_t y);
 size_t	find_p(t_game *game);
 bool	pass_find(t_game *game, bool *visited, t_stack *stack);
 bool	reach_E(t_game *game);
+void	ft_exit(void);
+bool	reach_item(t_game *game, size_t x, size_t y);
+size_t	find_c(t_game *game);
+bool	pass_find(t_game *game, bool *visited, t_stack *stack);
+bool	no_c(t_game *game);
+bool	reach_c(t_game *game);
 
 #endif

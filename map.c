@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:39:06 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/03 18:49:34 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/13 16:31:46 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,11 @@ void map_read(char *filename, t_game *game)
 	int	fd;
 	char *line;
 
+	game->error_item = 0;
 	fd = open(filename, O_RDONLY);
 	line = get_next_line(fd);
 	if(line == NULL || *line == '\0')
-	{
-		printf("empty_Error\n");
-		exit(EXIT_FAILURE);
-	}
+		ft_exit();
 	if (line[ft_strlen(line) - 1] == '\n')
 		line[ft_strlen(line) - 1] = '\0';
 	game->hei = 0;
@@ -101,11 +99,6 @@ void	setting_img(t_game game)
 			{
 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.rune, wid * 50, hei * 50);
 			}
-			// else if (alpha != '1' && alpha != 'C' && alpha != 'P' && alpha != 'E')
-			// {
-			// 	printf("henamozi_Error\n");
-			// 	exit(EXIT_FAILURE);
-			// }
 			else
 			{
 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.land, wid * 50, hei * 50);

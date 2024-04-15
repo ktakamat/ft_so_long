@@ -6,7 +6,7 @@
 /*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/08 21:06:46 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/15 15:51:14 by machi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,26 @@ int main(int ac, char **av)
 	map_read(av[1], &game);
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, 50 * game.wid, 50 * game.hei, "my_mlx");
-	game.img.land = mlx_xpm_file_to_image(mlx, "./images/land.xpm", &img_width, &img_height);
-	game.img.wall = mlx_xpm_file_to_image(mlx, "./images/wall.xpm", &img_width, &img_height);
-	game.img.chara = mlx_xpm_file_to_image(mlx, "./images/chara.xpm", &img_width, &img_height);
-	game.img.chest = mlx_xpm_file_to_image(mlx, "./images/chest.xpm", &img_width, &img_height);
-	game.img.chest_open = mlx_xpm_file_to_image(mlx, "./images/chest_open.xpm", &img_width, &img_height);
-	game.img.rune = mlx_xpm_file_to_image(mlx, "./images/rune.xpm", &img_width, &img_height);
-	game.img.runl = mlx_xpm_file_to_image(mlx, "./images/rune_light.xpm", &img_width, &img_height);
+	game.img.land = mlx_xpm_file_to_image(mlx, "./textures/land.xpm", &img_width, &img_height);
+	game.img.wall = mlx_xpm_file_to_image(mlx, "./textures/wall.xpm", &img_width, &img_height);
+	game.img.chara = mlx_xpm_file_to_image(mlx, "./textures/chara.xpm", &img_width, &img_height);
+	game.img.chest = mlx_xpm_file_to_image(mlx, "./textures/chest.xpm", &img_width, &img_height);
+	game.img.chest_open = mlx_xpm_file_to_image(mlx, "./textures/chest_open.xpm", &img_width, &img_height);
+	game.img.rune = mlx_xpm_file_to_image(mlx, "./textures/rune.xpm", &img_width, &img_height);
+	game.img.runl = mlx_xpm_file_to_image(mlx, "./textures/rune_light.xpm", &img_width, &img_height);
 	game.mlx.m_ptr = mlx;
 	game.mlx.w_ptr = win;
 	mlx_key_hook(win, &press_key, &game);
 	(void)ac;
 	setting_img(game);
 	if (reach_E(&game))
-	{
-		printf("goal_dekiru\n");
-	}
+		printf("Error\n");
 	else
-	{
-		printf("goal_dekinai\n");
-	}
+		ft_exit();
 	check_first_line(&game);
 	num_chara_goal(&game);
 	no_item(&game);
 	last_line(&game);
-	// check_goal_reachable(&game);
 	game.all_col = 1;
 	mlx_loop(mlx);
 	return (0);

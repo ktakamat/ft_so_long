@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/13 19:03:47 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/15 21:10:09 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
+# define FILE_EXTENSION ".ber"
 // # define LAND "./textures/land.xpm"
 // # define WALL "./textures/wall.xpm"
 // # define CHA "./textures/chara.xpm"
@@ -130,13 +131,16 @@ void	can_pass(t_game *game, bool *visited, t_stack *stack);
 void	terms_pass(t_game *game, bool *visited, t_stack *stack);
 bool	reach_goal(t_game *game, size_t x, size_t y);
 size_t	find_p(t_game *game);
-bool	pass_find(t_game *game, bool *visited, t_stack *stack);
+bool	pass_find1(t_game *game, bool *visited, t_stack *stack);
 bool	reach_E(t_game *game);
 void	ft_exit(void);
 bool	reach_item(t_game *game, size_t x, size_t y);
 size_t	find_c(t_game *game);
-bool	pass_find(t_game *game, bool *visited, t_stack *stack);
+bool	pass_find2(t_game *game, bool *visited, t_stack *stack);
 bool	no_c(t_game *game);
 bool	reach_c(t_game *game);
+bool	have_ber(const char *filename);
+void	map_word(char *map_str);
+size_t count_coin(t_game *game);
 
 #endif

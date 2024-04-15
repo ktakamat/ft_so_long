@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: machi <machi@student.42.fr>                +#+  +:+       +#+         #
+#    By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 17:11:04 by ktakamat          #+#    #+#              #
-#    Updated: 2024/04/13 19:04:05 by machi            ###   ########.fr        #
+#    Updated: 2024/04/15 17:47:30 by ktakamat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS = main.c \
 		get_next_line.c \
 		move.c\
 		error.c\
+		error2.c\
 		tansaku_error1.c\
 		tansaku_error2.c\
 		tansaku_item.c
@@ -30,17 +31,30 @@ OBJS = $(SRCS:%.c=%.o)
 LIBDIR = ./libft
 LIBFT = $(LIBDIR)/libft.a
 
+MLXDIR = ./mlx
+MLX = $(MLXDIR)/libmlx.a
+
+MLX_SRC = mlx_shaders.c mlx_new_window.m mlx_init_loop.m mlx_new_image.m mlx_xpm.c mlx_int_str_to_wordtab.c mlx_png.c mlx_mouse.m
+MLX_OBJ = $(MLX_SRC:.c=.o) $(MLX_SRC:.m=.o)
+
+CFLAGS += -O2 -DSTRINGPUTX11
+
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT) $(MLX)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBDIR)
 
+
+$(MLX):
+	$(MAKE) -C $(MLXDIR)
+
 clean:
 	$(MAKE) clean -C $(LIBDIR)
-	$(RM) $(OBJS)
+	$(MAKE) clean -C $(MLXDIR)
+	$(RM) $(OBJS) $(MLX_OBJ)
 
 fclean: clean
 	$(MAKE) fclean -C $(LIBDIR)
@@ -48,4 +62,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean rearch -x86_64 gcc -L./mlx -lmlx -framework OpenGL -framework AppKit main.c
+.PHONY: all clean fclean re

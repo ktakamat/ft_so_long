@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tansaku_error2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 03:33:22 by machi             #+#    #+#             */
-/*   Updated: 2024/04/08 21:53:48 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/15 16:34:12 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	find_p(t_game *game)
 	return(0);
 }
 
-bool	pass_find(t_game *game, bool *visited, t_stack *stack)
+bool	pass_find1(t_game *game, bool *visited, t_stack *stack)
 {
 	int			i;
 	static int	dx[] = {-1, 0, 1, 0};
@@ -73,5 +73,5 @@ bool	reach_E(t_game *game)
 	ft_memset(visited, false, sizeof(visited));
 	stack[game->top] = start;
 	visited[start.x + (start.y * game->wid)] = true;
-	return pass_find(game, visited, stack);
+	return pass_find1(game, visited, stack);
 }

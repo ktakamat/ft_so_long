@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/15 15:51:14 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/15 21:47:57 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(int ac, char **av)
 	int img_width;
 	int img_height;
 	t_game game;
+	const char	*filename = av[1];
 
 	ft_memset(&game, 0, sizeof(t_game));
 	map_read(av[1], &game);
@@ -37,16 +38,19 @@ int main(int ac, char **av)
 	game.mlx.w_ptr = win;
 	mlx_key_hook(win, &press_key, &game);
 	(void)ac;
+	if(!have_ber(filename))
+		ft_exit();
 	setting_img(game);
-	if (reach_E(&game))
-		printf("Error\n");
-	else
+	if (!reach_E(&game))
+		ft_exit();
+	if (!reach_c(&game))
 		ft_exit();
 	check_first_line(&game);
 	num_chara_goal(&game);
 	no_item(&game);
 	last_line(&game);
-	game.all_col = 1;
+	printf("%zu\n", count_coin(&game));
+	game.all_col = count_coin(&game);
 	mlx_loop(mlx);
 	return (0);
-}
+} 

@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/15 21:10:09 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/16 15:37:27 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,22 +69,6 @@ typedef struct s_img{
 	int		width;
 	int		height;
 }	t_img;
-
-typedef struct s_map{
-	t_mlx	mlx;
-	t_img	img;
-	size_t	height;
-	size_t	width;
-	char	*str_line;
-	char	col_cnt;
-	char	all_col;
-	int		walk_cnt;
-	int		flag;
-	int		top;
-	int		now_col;
-	int		xi;
-	int		yi;
-}	t_map;
 
 typedef struct s_game
 {

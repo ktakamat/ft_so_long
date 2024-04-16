@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 20:11:59 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/05 19:21:44 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/15 22:06:37 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ void	move_w(t_game *g)
 	if(g->str_line[i - g->wid] == 'C')
 		g->col_cnt++;
 	if(g->str_line[i - g->wid] == 'E' && g->all_col == g->col_cnt)
+	{
+		printf("clear\n");
 		clear_game(g);
+	}
 	else if(g->str_line[i - g->wid] != '1' && g->str_line[i - g->wid] != 'E')
 	{
 		g->str_line[i] = '0';
@@ -61,7 +64,10 @@ void	move_s(t_game *g)
 	if(g->str_line[i + g->wid] == 'C')
 		g->col_cnt++;
 	if(g->str_line[i + g->wid] == 'E' && g->all_col == g->col_cnt)
+	{
+		printf("clear\n");
 		clear_game(g);
+	}
 	else if(g->str_line[i + g->wid] != '1' && g->str_line[i + g->wid] != 'E')
 	{
 		g->str_line[i] = '0';
@@ -85,7 +91,10 @@ void	move_a(t_game *g)
 	if(g->str_line[i - 1] == 'C')
 		g->col_cnt++;
 	if(g->str_line[i - 1] == 'E' && g->all_col == g->col_cnt)
+	{
+		printf("clear\n");
 		clear_game(g);
+	}
 	else if(g->str_line[i - 1] != '1' && g->str_line[i - 1] != 'E')
 	{
 		g->str_line[i] = '0';
@@ -109,7 +118,10 @@ void	move_d(t_game *g)
 	if(g->str_line[i + 1] == 'C')
 		g->col_cnt++;
 	if(g->str_line[i + 1] == 'E' && g->all_col == g->col_cnt)
+	{
+		printf("clear\n");
 		clear_game(g);
+	}
 	else if(g->str_line[i + 1] != '1' && g->str_line[i + 1] != 'E')
 	{
 		g->str_line[i] = '0';

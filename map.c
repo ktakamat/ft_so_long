@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:39:06 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/15 21:08:23 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:04:29 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,33 +69,61 @@ void map_read(char *filename, t_game *game)
 	printf("%s\n", game->str_line);
 }
 
-void	setting_img(t_game game)
-{
-	size_t		hei;
-	size_t		wid;
+// void	setting_img(t_game game)
+// {
+// 	size_t		hei;
+// 	size_t		wid;
 
-	hei = 0;
-	while (hei < game.hei)
-	{
-		wid = 0;
-		while (wid < game.wid)
-		{			
-			char alpha = game.str_line[hei * game.wid + wid];
-			if (alpha == '1')
-				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.wall, wid * 50, hei * 50);
-			else if (alpha == 'C')
-				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.chest, wid * 50, hei * 50);
-			else if (alpha == 'P')
-				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.chara, wid * 50, hei * 50);
-			else if (alpha == 'E')
-				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.rune, wid * 50, hei * 50);
-			else
-				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.land, wid * 50, hei * 50);
-			wid++;
-		}
-		hei++;
-	}
+// 	hei = 0;
+// 	while (hei < game.hei)
+// 	{
+// 		wid = 0;
+// 		while (wid < game.wid)
+// 		{			
+// 			char alpha = game.str_line[hei * game.wid + wid];
+// 			if (alpha == '1')
+// 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.wall, wid * 50, hei * 50);
+// 			else if (alpha == 'C')
+// 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.chest, wid * 50, hei * 50);
+// 			else if (alpha == 'P')
+// 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.chara, wid * 50, hei * 50);
+// 			else if (alpha == 'E')
+// 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.rune, wid * 50, hei * 50);
+// 			else
+// 				mlx_put_image_to_window(game.mlx.m_ptr, game.mlx.w_ptr, game.img.land, wid * 50, hei * 50);
+// 			wid++;
+// 		}
+// 		hei++;
+// 	}
+// }
+
+void setting_img(t_game *game) {
+    size_t hei;
+    size_t wid;
+
+    hei = 0;
+    while (hei < game->hei)
+    {
+        wid = 0;
+        while (wid < game->wid)
+        {           
+            char alpha = game->str_line[hei * game->wid + wid];
+            if (alpha == '1')
+                mlx_put_image_to_window(game->mlx.m_ptr, game->mlx.w_ptr, game->img.wall, wid * 50, hei * 50);
+            else if (alpha == 'C')
+                mlx_put_image_to_window(game->mlx.m_ptr, game->mlx.w_ptr, game->img.chest, wid * 50, hei * 50);
+            else if (alpha == 'P')
+                mlx_put_image_to_window(game->mlx.m_ptr, game->mlx.w_ptr, game->img.chara, wid * 50, hei * 50);
+            else if (alpha == 'E')
+                mlx_put_image_to_window(game->mlx.m_ptr, game->mlx.w_ptr, game->img.rune, wid * 50, hei * 50);
+            else
+                mlx_put_image_to_window(game->mlx.m_ptr, game->mlx.w_ptr, game->img.land, wid * 50, hei * 50);
+            wid++;
+        }
+        hei++;
+    }
 }
+
 
 void check_first_line(t_game *game)
 {

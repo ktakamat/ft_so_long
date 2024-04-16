@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:45:48 by machi             #+#    #+#             */
-/*   Updated: 2024/04/16 15:56:45 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:07:21 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 bool	reach_item(t_game *game, size_t x, size_t y)
 {
-	printf("reach_item\n");
 	return (game->str_line[x + (y * game->wid)] == 'P');
 }
 
@@ -47,7 +46,6 @@ bool	pass_find2(t_game *game, bool *visited, t_stack *stack)
 			return (true);
 		while (i < 4)
 		{
-			printf("koko\n");
 			game->xi = cur.x + dx[i];
 			game->yi = cur.y + dy[i];
 			terms_pass(game, visited, stack);
@@ -70,8 +68,9 @@ bool	reach_c(t_game *game)
 	t_stack start;
 	bool visited[MAX_SIZE * MAX_SIZE];
 	size_t start_index = find_c(game);
-	int	i = 0;
+	int	i;
 
+	i = 0;
 	while(i++ < game->all_col)
 	{
 		if (start_index == 0)

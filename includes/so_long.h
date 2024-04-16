@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/16 15:37:27 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:16:31 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ typedef struct s_game
 }	t_game;
 
 void map_read(char *filename, t_game *game);
-void	setting_img(t_game game);
+void	setting_img(t_game *game);
 char	*get_next_line(int fd);
 char	*read_file(int fd, char *save);
 char	*get_line(char *save);
@@ -126,5 +126,10 @@ bool	reach_c(t_game *game);
 bool	have_ber(const char *filename);
 void	map_word(char *map_str);
 size_t count_coin(t_game *game);
+void init_textures(void *mlx, t_game *game, int *img_width, int *img_height);
+void init_game_window(t_game *game, void *mlx, void *win);
+bool	check1(const char *filename, t_game *game);
+bool check2(t_game *game);
+void run_game_loop(void *mlx);
 
 #endif

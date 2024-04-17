@@ -6,11 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:45:48 by machi             #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/04/16 20:07:21 by ktakamat         ###   ########.fr       */
-=======
-/*   Updated: 2024/04/16 15:56:45 by ktakamat         ###   ########.fr       */
->>>>>>> cf47c4f27049ff3f1c4520879c61bcd9881e6c5f
+/*   Updated: 2024/04/17 16:44:36 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +14,6 @@
 
 bool	reach_item(t_game *game, size_t x, size_t y)
 {
-<<<<<<< HEAD
-=======
-	printf("reach_item\n");
->>>>>>> cf47c4f27049ff3f1c4520879c61bcd9881e6c5f
 	return (game->str_line[x + (y * game->wid)] == 'P');
 }
 
@@ -54,10 +46,10 @@ bool	pass_find2(t_game *game, bool *visited, t_stack *stack)
 			return (true);
 		while (i < 4)
 		{
-			printf("koko\n");
 			game->xi = cur.x + dx[i];
 			game->yi = cur.y + dy[i];
 			terms_pass(game, visited, stack);
+			printf("terms_pss\n");
 			i++;
 		}
 	}
@@ -80,6 +72,7 @@ bool	reach_c(t_game *game)
 	int	i;
 
 	i = 0;
+	printf("kkoko = [%d]\n", game->all_col);
 	while(i++ < game->all_col)
 	{
 		if (start_index == 0)

@@ -6,11 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/04/16 22:24:50 by ktakamat         ###   ########.fr       */
-=======
-/*   Updated: 2024/04/16 15:47:47 by ktakamat         ###   ########.fr       */
->>>>>>> cf47c4f27049ff3f1c4520879c61bcd9881e6c5f
+/*   Updated: 2024/04/17 16:35:46 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +104,10 @@ bool check1(const char *filename, t_game *game)
     num_chara_goal(game);
 	no_item(game);
     check_first_line(game);
+	check_map_edges(game);
+	printf("%zu\n", count_coin(game));
+    game->all_col = count_coin(game);
+	printf("game.all_col = [%d]\n", game->all_col);
 	if (!reach_E(game) || !reach_c(game))
         ft_exit();
 	return true;
@@ -116,8 +116,8 @@ bool check1(const char *filename, t_game *game)
 bool check2(t_game *game)
 {
     setting_img(game);
-    printf("%zu\n", count_coin(game));
-    game->all_col = count_coin(game);
-	printf("game.all_col = [%d]\n", game->all_col);
+    // printf("%zu\n", count_coin(game));
+    // game->all_col = count_coin(game);
+	// printf("game.all_col = [%d]\n", game->all_col);
     return true;
 }

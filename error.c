@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:12:23 by machi             #+#    #+#             */
-/*   Updated: 2024/04/13 19:02:55 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:15:20 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx/mlx.h"
 #include "so_long.h"
 
 void	num_chara_goal(t_game *game)
@@ -70,6 +69,16 @@ void	last_line(t_game *game)
 	}
 	if (last_width != expected_width)
 		ft_exit();
+	char	*last_line_start = &(game->str_line[index * game->wid]);
+	char	*last_line_end = last_line_start + expected_width;
+	char	*ptr = last_line_start;
+
+	while	(ptr < last_line_end)
+	{
+		if (*ptr != '1')
+			ft_exit();
+		ptr++;
+	}
 }
 
 void	ft_exit(void)

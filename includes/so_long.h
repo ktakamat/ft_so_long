@@ -6,11 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/04/16 22:16:31 by ktakamat         ###   ########.fr       */
-=======
-/*   Updated: 2024/04/16 15:37:27 by ktakamat         ###   ########.fr       */
->>>>>>> cf47c4f27049ff3f1c4520879c61bcd9881e6c5f
+/*   Updated: 2024/04/17 16:08:30 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,5 +131,6 @@ void init_game_window(t_game *game, void *mlx, void *win);
 bool	check1(const char *filename, t_game *game);
 bool check2(t_game *game);
 void run_game_loop(void *mlx);
+void	check_map_edges(t_game *game);
 
 #endif

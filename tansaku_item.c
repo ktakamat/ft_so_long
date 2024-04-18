@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:45:48 by machi             #+#    #+#             */
-/*   Updated: 2024/04/17 17:36:46 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:08:53 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	find_c(t_game *game)
 			return (game->now_col);
 		game->now_col++;
 	}
-	return(0);
+	return (0);
 }
 
 bool	pass_find2(t_game *game, bool *visited, t_stack *stack)
@@ -58,20 +58,20 @@ bool	pass_find2(t_game *game, bool *visited, t_stack *stack)
 bool	no_c(t_game *game)
 {
 	if (game->error_item == 0)
-		return(true);
+		return (true);
 	return (false);
 }
 
 bool	reach_c(t_game *game)
 {
 	t_stack	stack[MAX_SIZE];
-	t_stack start;
-	bool visited[MAX_SIZE * MAX_SIZE];
-	size_t start_index;
-	int	i;
+	t_stack	start;
+	bool	visited[MAX_SIZE * MAX_SIZE];
+	size_t	start_index;
+	int		i;
 
 	i = 0;
-	while(i++ < game->all_col)
+	while (i++ < game->all_col)
 	{
 		start_index = find_c(game);
 		if (start_index == 0)

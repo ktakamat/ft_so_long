@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:12:23 by machi             #+#    #+#             */
-/*   Updated: 2024/04/17 16:15:20 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:32:46 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 void	num_chara_goal(t_game *game)
 {
-	int	p_count = 0;
-	int	e_count = 0;
-	size_t	hei = 0;
+	int		p_count;
+	int		e_count;
+	size_t	hei;
+	size_t	wid;
 
+	p_count = 0;
+	e_count = 0;
+	hei = 0;
 	while (hei < game->hei)
 	{
-		size_t	wid = 0;
+		wid = 0;
 		while (wid < game->wid)
 		{
 			if (game->str_line[hei * game->wid + wid] == 'P')
@@ -37,12 +41,15 @@ void	num_chara_goal(t_game *game)
 
 void	no_item(t_game *game)
 {
-	int	c_count = 0;
-	size_t hei = 0;
+	int		c_count;
+	size_t	hei;
+	size_t	wid;
 
+	c_count = 0;
+	hei = 0;
 	while (hei < game->hei)
 	{
-		size_t wid = 0;
+		wid = 0;
 		while (wid < game->wid)
 		{
 			if (game->str_line[hei * game->wid + wid] == 'C')
@@ -57,27 +64,27 @@ void	no_item(t_game *game)
 
 void	last_line(t_game *game)
 {
-	size_t	index = game->hei - 1;
-	size_t	expected_width = game->wid;
-	size_t	last_width = 0;
-	size_t	i = index * game->wid;
+	t_last	last;
 
-	while(game->str_line[i] != '\0')
+	last.index = game->hei - 1;
+	last.expected_width = game->wid;
+	last.last_width = 0;
+	last.i = last.index * game->wid;
+	while (game->str_line[last.i] != '\0')
 	{
-		last_width++;
-		i++;
+		last.last_width++;
+		last.i++;
 	}
-	if (last_width != expected_width)
+	if (last.last_width != last.expected_width)
 		ft_exit();
-	char	*last_line_start = &(game->str_line[index * game->wid]);
-	char	*last_line_end = last_line_start + expected_width;
-	char	*ptr = last_line_start;
-
-	while	(ptr < last_line_end)
+	last.last_line_start = &(game->str_line[last.index * game->wid]);
+	last.last_line_end = last.last_line_start + last.expected_width;
+	last.ptr = last.last_line_start;
+	while (last.ptr < last.last_line_end)
 	{
-		if (*ptr != '1')
+		if (*last.ptr != '1')
 			ft_exit();
-		ptr++;
+		last.ptr++;
 	}
 }
 

@@ -6,7 +6,7 @@
 #    By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 17:11:04 by ktakamat          #+#    #+#              #
-#    Updated: 2024/04/15 17:47:30 by ktakamat         ###   ########.fr        #
+#    Updated: 2024/04/18 18:04:42 by ktakamat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS = main.c \
 		map.c \
 		get_next_line.c \
 		move.c\
+		move_key.c\
 		error.c\
 		error2.c\
 		tansaku_error1.c\

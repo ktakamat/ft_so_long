@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 03:33:22 by machi             #+#    #+#             */
-/*   Updated: 2024/04/15 16:34:12 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:08:21 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ bool	reach_goal(t_game *game, size_t x, size_t y)
 size_t	find_p(t_game *game)
 {
 	size_t	i;
-	
+
 	i = 0;
 	if (!game->str_line)
 		return (0);
 	while (game->str_line[i])
 	{
 		if (game->str_line[i] == 'P')
-			return(i);
+			return (i);
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
 bool	pass_find1(t_game *game, bool *visited, t_stack *stack)
@@ -58,13 +58,14 @@ bool	pass_find1(t_game *game, bool *visited, t_stack *stack)
 	return (false);
 }
 
-bool	reach_E(t_game *game)
+bool	reach_e(t_game *game)
 {
 	t_stack	stack[MAX_SIZE];
-	t_stack start;
-	bool visited[MAX_SIZE * MAX_SIZE];
-	size_t start_index = find_p(game);
-	
+	t_stack	start;
+	bool	visited[MAX_SIZE * MAX_SIZE];
+	size_t	start_index;
+
+	start_index = find_p(game);
 	start.x = start_index % game->wid;
 	start.y = start_index / game->wid;
 	game->top = 0;
@@ -73,5 +74,5 @@ bool	reach_E(t_game *game)
 	ft_memset(visited, false, sizeof(visited));
 	stack[game->top] = start;
 	visited[start.x + (start.y * game->wid)] = true;
-	return pass_find1(game, visited, stack);
+	return (pass_find1(game, visited, stack));
 }

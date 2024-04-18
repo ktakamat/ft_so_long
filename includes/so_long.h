@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/17 16:08:30 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:31:28 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,35 +88,53 @@ typedef struct s_game
 	int		error_item;
 }	t_game;
 
-void map_read(char *filename, t_game *game);
+typedef struct s_ma
+{
+	void		*mlx;
+	void		*win;
+}	t_ma;
+
+typedef struct s_last
+{
+	size_t	index;
+	size_t	expected_width;
+	size_t	last_width;
+	size_t	i;
+	char	*last_line_start;
+	char	*last_line_end;
+	char	*ptr;
+}	t_last;
+
+void	map_read(char *filename, t_game *game);
 void	setting_img(t_game *game);
+void	put_img(t_game *game, char alpha, size_t x, size_t y);
 char	*get_next_line(int fd);
 char	*read_file(int fd, char *save);
 char	*get_line(char *save);
 char	*reset_save(char *save);
-char    *ft_strjoin_new(char const *s1, char const *s2);
-int	press_key(int key_code, t_game *game);
+char	*ft_strjoin_new(char const *s1, char const *s2);
+int		press_key(int key_code, t_game *game);
 void	move_w(t_game *g);
 void	move_s(t_game *g);
 void	move_a(t_game *g);
 void	move_d(t_game *g);
-int	clear_game(t_game *game);
-int	exit_game(t_game *game);
+int		clear_game(t_game *game);
+int		exit_game(t_game *game);
 void	num_chara_goal(t_game *game);
 void	no_item(t_game *game);
-void check_first_line(t_game *game);
+void	check_first_line(t_game *game);
 void	last_line(t_game *game);
-void check_goal_reachable(t_game *game);
-void find_p_position(t_game *game, size_t *p_x, size_t *p_y);
-int can_reach_end(t_game *game, size_t x, size_t y);
+void	check_goal_reachable(t_game *game);
+void	find_p_position(t_game *game, size_t *p_x, size_t *p_y);
+int		can_reach_end(t_game *game, size_t x, size_t y);
 bool	check_o(t_game *game, size_t x, size_t y);
-bool	check_E(t_game *game, size_t x, size_t y);
+bool	check_e(t_game *game, size_t x, size_t y);
 void	can_pass(t_game *game, bool *visited, t_stack *stack);
 void	terms_pass(t_game *game, bool *visited, t_stack *stack);
 bool	reach_goal(t_game *game, size_t x, size_t y);
 size_t	find_p(t_game *game);
 bool	pass_find1(t_game *game, bool *visited, t_stack *stack);
-bool	reach_E(t_game *game);
+bool	reach_e(t_game *game);
 void	ft_exit(void);
 bool	reach_item(t_game *game, size_t x, size_t y);
 size_t	find_c(t_game *game);
@@ -125,12 +143,12 @@ bool	no_c(t_game *game);
 bool	reach_c(t_game *game);
 bool	have_ber(const char *filename);
 void	map_word(char *map_str);
-size_t count_coin(t_game *game);
-void init_textures(void *mlx, t_game *game, int *img_width, int *img_height);
-void init_game_window(t_game *game, void *mlx, void *win);
+size_t	count_coin(t_game *game);
+void	init_textures(void *mlx, t_game *game, int *img_width, int *img_height);
+void	init_game_window(t_game *game, void *mlx, void *win);
 bool	check1(const char *filename, t_game *game);
-bool check2(t_game *game);
-void run_game_loop(void *mlx);
+bool	check2(t_game *game);
+void	run_game_loop(void *mlx);
 void	check_map_edges(t_game *game);
 
 #endif

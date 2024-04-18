@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:47:38 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/17 16:12:54 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:12:56 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ bool	have_ber(const char *filename)
 
 void	map_word(char *map_str)
 {
+	if (!map_str)
+		return;
 	while(*map_str && map_str)
 	{
 	if (*map_str == '\n')

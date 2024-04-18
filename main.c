@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/17 16:35:46 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:41:11 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,5 @@ bool check1(const char *filename, t_game *game)
 bool check2(t_game *game)
 {
     setting_img(game);
-    // printf("%zu\n", count_coin(game));
-    // game->all_col = count_coin(game);
-	// printf("game.all_col = [%d]\n", game->all_col);
     return true;
 }

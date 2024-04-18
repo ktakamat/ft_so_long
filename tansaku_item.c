@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:45:48 by machi             #+#    #+#             */
-/*   Updated: 2024/04/17 16:44:36 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:36:46 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ bool	pass_find2(t_game *game, bool *visited, t_stack *stack)
 			game->xi = cur.x + dx[i];
 			game->yi = cur.y + dy[i];
 			terms_pass(game, visited, stack);
-			printf("terms_pss\n");
 			i++;
 		}
 	}
@@ -68,13 +67,13 @@ bool	reach_c(t_game *game)
 	t_stack	stack[MAX_SIZE];
 	t_stack start;
 	bool visited[MAX_SIZE * MAX_SIZE];
-	size_t start_index = find_c(game);
+	size_t start_index;
 	int	i;
 
 	i = 0;
-	printf("kkoko = [%d]\n", game->all_col);
 	while(i++ < game->all_col)
 	{
+		start_index = find_c(game);
 		if (start_index == 0)
 			game->error_item++;
 		start.x = start_index % game->wid;

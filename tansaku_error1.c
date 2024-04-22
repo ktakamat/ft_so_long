@@ -6,11 +6,10 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 21:13:14 by machi             #+#    #+#             */
-/*   Updated: 2024/04/18 18:06:43 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:52:29 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx/mlx.h"
 #include "so_long.h"
 
 bool	check_o(t_game *game, size_t x, size_t y)

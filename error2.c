@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:47:38 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/18 18:35:40 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:03:47 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,10 @@ size_t	count_coin(t_game *game)
 		index++;
 	}
 	return (count);
+}
+
+void	map_limit(t_game *game)
+{
+	if (game->hei >= MAX_HEI || game->wid >= MAX_WID)
+		ft_exit();
 }

@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:03:58 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/20 18:52:10 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:20:58 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	move_w(t_game *g)
 		g->walk_cnt++;
 		printf("%d\n", g->walk_cnt);
 		setting_img(g);
-}
 	}
+}
 
 void	move_s(t_game *g)
 {

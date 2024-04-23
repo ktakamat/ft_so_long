@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/18 18:31:28 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:06:46 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@
 # define KEY_S 1
 # define KEY_D 2
 # define FILE_EXTENSION ".ber"
+# define MAX_HEI 32
+# define MAX_WID 58
+
 // # define LAND "./textures/land.xpm"
 // # define WALL "./textures/wall.xpm"
 // # define CHA "./textures/chara.xpm"
@@ -150,5 +153,6 @@ bool	check1(const char *filename, t_game *game);
 bool	check2(t_game *game);
 void	run_game_loop(void *mlx);
 void	check_map_edges(t_game *game);
+void	map_limit(t_game *game);
 
 #endif

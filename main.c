@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/18 18:40:42 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:01:17 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ bool	check1(const char *filename, t_game *game)
 {
 	if (!have_ber(filename))
 		ft_exit();
+	map_limit(game);
 	last_line(game);
 	num_chara_goal(game);
 	no_item(game);

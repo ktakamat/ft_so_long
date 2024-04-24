@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/24 19:46:08 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:05:40 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int ac, char **av)
 	game.mlx.m_ptr = ma.mlx;
 	game.mlx.w_ptr = ma.win;
 	mlx_key_hook(ma.win, &press_key, &game);
+	mlx_loop_hook(ma.mlx, setting_img, &game);
 	mlx_hook(ma.win, 17, 0, close_window, &game);
 	(void)ac;
 	setting_img(&game);
@@ -79,7 +80,11 @@ int	close_window(void *param)
 
 	game = (t_game *)param;
 	free(game->str_line);
-	mlx_destroy_window(game->mx, game->win);
 	exit(0);
 	return (0);
 }
+
+// __attribute__((destructor))
+// static void destructor() {
+//     system("leaks -q so_long");
+// }

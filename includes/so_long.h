@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/23 18:08:39 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/24 19:58:32 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ typedef struct s_last
 }	t_last;
 
 void	map_read(char *filename, t_game *game);
-void	setting_img(t_game *game);
+int		setting_img(t_game *game);
 void	put_img(t_game *game, char alpha, size_t x, size_t y);
 char	*get_next_line(int fd);
 char	*read_file(int fd, char *save);

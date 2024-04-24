@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:39:06 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/24 19:46:22 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/24 19:58:11 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	put_img(t_game *game, char alpha, size_t x, size_t y)
 			game->img.land, x * 50, y * 50);
 }
 
-void	setting_img(t_game *game)
+int	setting_img(t_game *game)
 {
 	size_t	hei;
 	size_t	wid;
@@ -105,6 +105,7 @@ void	setting_img(t_game *game)
 		}
 		hei++;
 	}
+	return (0);
 }
 
 void	check_first_line(t_game *game)

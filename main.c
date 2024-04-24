@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 17:09:07 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/23 16:01:17 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/24 19:46:08 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	main(int ac, char **av)
 	game.mlx.m_ptr = ma.mlx;
 	game.mlx.w_ptr = ma.win;
 	mlx_key_hook(ma.win, &press_key, &game);
+	mlx_hook(ma.win, 17, 0, close_window, &game);
 	(void)ac;
-	check2(&game);
-	printf("main : game.all_col = [%d]\n", game.all_col);
+	setting_img(&game);
 	mlx_loop(ma.mlx);
 	return (0);
 }
@@ -73,8 +73,13 @@ bool	check1(const char *filename, t_game *game)
 	return (true);
 }
 
-bool	check2(t_game *game)
+int	close_window(void *param)
 {
-	setting_img(game);
-	return (true);
+	t_game	*game;
+
+	game = (t_game *)param;
+	free(game->str_line);
+	mlx_destroy_window(game->mx, game->win);
+	exit(0);
+	return (0);
 }

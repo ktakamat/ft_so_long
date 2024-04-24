@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:39:06 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/22 17:10:13 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/24 19:46:22 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	map_read(char *filename, t_game *game)
 			game->str_line = ft_strjoin_new(game->str_line, line);
 	}
 	close(fd);
-	printf("%s\n", game->str_line);
 }
 
 void	put_img(t_game *game, char alpha, size_t x, size_t y)

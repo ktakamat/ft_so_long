@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:47:38 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/23 16:03:47 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:00:08 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ bool	have_ber(const char *filename)
 	const char	*ext;
 
 	ext = ft_strrchr(filename, '.');
-	if (ext != NULL && strcmp(ext, FILE_EXTENSION) == 0)
+	if (ext != NULL && ft_strcmp(ext, FILE_EXTENSION) == 0)
 		return (true);
 	return (false);
 }

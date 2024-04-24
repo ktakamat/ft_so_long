@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/23 16:06:46 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:08:39 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ typedef struct s_game
 	t_img	img;
 	size_t	hei;
 	size_t	wid;
+	void	*mx;
+	void	*win;
 	char	*str_line;
 	char	col_cnt;
 	char	all_col;
@@ -89,6 +91,7 @@ typedef struct s_game
 	int		xi;
 	int		yi;
 	int		error_item;
+	bool	running;
 }	t_game;
 
 typedef struct s_ma
@@ -150,9 +153,10 @@ size_t	count_coin(t_game *game);
 void	init_textures(void *mlx, t_game *game, int *img_width, int *img_height);
 void	init_game_window(t_game *game, void *mlx, void *win);
 bool	check1(const char *filename, t_game *game);
-bool	check2(t_game *game);
+int		close_window(void *param);
 void	run_game_loop(void *mlx);
 void	check_map_edges(t_game *game);
 void	map_limit(t_game *game);
+void	close_game(t_game *game);
 
 #endif

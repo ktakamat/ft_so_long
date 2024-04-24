@@ -6,7 +6,7 @@
 #    By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 21:10:02 by machi             #+#    #+#              #
-#    Updated: 2024/03/31 16:51:13 by ktakamat         ###   ########.fr        #
+#    Updated: 2024/04/23 16:59:44 by ktakamat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRCS = ft_atoi.c \
 	ft_strlen.c \
 	ft_strmapi.c \
 	ft_strncmp.c \
+	ft_strcmp.c \
 	ft_strnstr.c \
 	ft_strrchr.c \
 	ft_strtrim.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:22:35 by machi             #+#    #+#             */
-/*   Updated: 2023/06/15 11:46:49 by machi            ###   ########.fr       */
+/*   Updated: 2024/04/25 20:14:22 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	a = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;
 	if (a == NULL)
-		return (NULL);
+		ft_exit();
 	while (i < len)
 	{
 		a[i] = s[start + i];

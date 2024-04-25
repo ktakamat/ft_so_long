@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 18:38:30 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/06/14 18:44:45 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:12:24 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_itoa(int n)
 	len = ft_len(n);
 	c = (char *)malloc(sizeof(char) * len + 1);
 	if (c == NULL)
-		return (NULL);
+		ft_exit();
 	c[len] = '\0';
 	len--;
 	while (len >= 0)

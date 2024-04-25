@@ -6,7 +6,7 @@
 #    By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 21:10:02 by machi             #+#    #+#              #
-#    Updated: 2024/04/25 19:52:39 by ktakamat         ###   ########.fr        #
+#    Updated: 2024/04/25 20:08:33 by ktakamat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ INCL = libft.h
 SRCS = ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
+	ft_exit.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \

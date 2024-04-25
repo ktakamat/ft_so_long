@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 18:38:04 by ktakamat          #+#    #+#             */
-/*   Updated: 2023/06/14 22:41:35 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:13:40 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,6 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	split = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!split)
-		return (NULL);
+		ft_exit();
 	return (ft_uwu(split, s, c));
 }

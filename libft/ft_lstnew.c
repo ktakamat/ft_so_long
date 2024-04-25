@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 23:22:00 by machi             #+#    #+#             */
-/*   Updated: 2023/06/14 18:45:52 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:12:51 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void *content)
 	list = malloc(sizeof(*list));
 	if (list == NULL)
 	{
-		return (NULL);
+		ft_exit();
 	}
 	list->content = content;
 	list->next = NULL;

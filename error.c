@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:12:23 by machi             #+#    #+#             */
-/*   Updated: 2024/04/25 18:59:34 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:09:16 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,17 @@ void	last_line(t_game *game)
 	}
 }
 
-void	ft_exit(void)
+void	check_first_line(t_game *game)
 {
-	ft_printf("Error\n");
-	exit(EXIT_FAILURE);
+	size_t	wid;
+	char	alpha;
+
+	wid = 0;
+	while (wid < game->wid)
+	{
+		alpha = game->str_line[wid];
+		if (alpha != '1' && alpha != 'C' && alpha != 'P' && alpha != 'E')
+			ft_exit();
+		wid++;
+	}
 }

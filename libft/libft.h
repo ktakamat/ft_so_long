@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 19:46:04 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/23 17:02:03 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:10:50 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include "../libft/ft_printf.h"
 
 typedef struct s_list
 {
@@ -70,5 +71,6 @@ char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_exit(void);
 
 #endif

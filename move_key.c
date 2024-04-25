@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:03:58 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/22 17:20:58 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:59:34 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	move_w(t_game *g)
 		g->col_cnt++;
 	if (g->str_line[i - g->wid] == 'E' && g->all_col == g->col_cnt)
 	{
-		printf("clear\n");
+		ft_printf("clear\n");
 		clear_game(g);
 	}
 	else if (g->str_line[i - g->wid] != '1' && g->str_line[i - g->wid] != 'E')
@@ -34,7 +34,7 @@ void	move_w(t_game *g)
 		g->str_line[i] = '0';
 		g->str_line[i - g->wid] = 'P';
 		g->walk_cnt++;
-		printf("%d\n", g->walk_cnt);
+		ft_printf("%d\n", g->walk_cnt);
 		setting_img(g);
 	}
 }
@@ -53,7 +53,7 @@ void	move_s(t_game *g)
 		g->col_cnt++;
 	if (g->str_line[i + g->wid] == 'E' && g->all_col == g->col_cnt)
 	{
-		printf("clear\n");
+		ft_printf("clear\n");
 		clear_game(g);
 	}
 	else if (g->str_line[i + g->wid] != '1' && g->str_line[i + g->wid] != 'E')
@@ -61,7 +61,7 @@ void	move_s(t_game *g)
 		g->str_line[i] = '0';
 		g->str_line[i + g->wid] = 'P';
 		g->walk_cnt++;
-		printf("%d\n", g->walk_cnt);
+		ft_printf("%d\n", g->walk_cnt);
 		setting_img(g);
 	}
 }
@@ -80,7 +80,7 @@ void	move_a(t_game *g)
 		g->col_cnt++;
 	if (g->str_line[i - 1] == 'E' && g->all_col == g->col_cnt)
 	{
-		printf("clear\n");
+		ft_printf("clear\n");
 		clear_game(g);
 	}
 	else if (g->str_line[i - 1] != '1' && g->str_line[i - 1] != 'E')
@@ -88,7 +88,7 @@ void	move_a(t_game *g)
 		g->str_line[i] = '0';
 		g->str_line[i - 1] = 'P';
 		g->walk_cnt++;
-		printf("%d\n", g->walk_cnt);
+		ft_printf("%d\n", g->walk_cnt);
 		setting_img(g);
 	}
 }
@@ -107,7 +107,7 @@ void	move_d(t_game *g)
 		g->col_cnt++;
 	if (g->str_line[i + 1] == 'E' && g->all_col == g->col_cnt)
 	{
-		printf("clear\n");
+		ft_printf("clear\n");
 		clear_game(g);
 	}
 	else if (g->str_line[i + 1] != '1' && g->str_line[i + 1] != 'E')
@@ -115,7 +115,7 @@ void	move_d(t_game *g)
 		g->str_line[i] = '0';
 		g->str_line[i + 1] = 'P';
 		g->walk_cnt++;
-		printf("%d\n", g->walk_cnt);
+		ft_printf("%d\n", g->walk_cnt);
 		setting_img(g);
 	}
 }

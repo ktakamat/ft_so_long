@@ -6,38 +6,31 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 18:39:06 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/24 19:58:11 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:55:41 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	*ft_strjoin_new(char const *s1, char const *s2)
+char	*ft_strjoin_new(char *s1, const char *s2)
 {
 	char	*a;
-	int		i;
-	int		j;
+	size_t	len_s1;
+	size_t	len_s2;
 
-	i = 0;
-	j = 0;
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	a = (char *)ft_calloc(sizeof(*a), (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	a = (char *)ft_calloc(sizeof(*a), (len_s1 + len_s2) + 1);
 	if (a == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
-	{
-		a[i] = s1[i];
-		i++;
-	}
-	while (s2[j] != '\0')
-	{
-		a[i] = s2[j];
-		i++;
-		j++;
-	}
-	if (a[i - 1] == '\n')
-		a[i - 1] = '\0';
+		ft_exit();
+	ft_strlcpy(a, s1, len_s1 + 1);
+	ft_strlcat(a, s2, len_s1 + len_s2 + 1);
+	if (a[len_s1 + len_s2 - 1] == '\n')
+		a[len_s1 + len_s2 - 1] = '\0';
+	free(s1);
+	s1 = NULL;
 	return (a);
 }
 
@@ -64,6 +57,7 @@ void	map_read(char *filename, t_game *game)
 		map_word(line);
 		if (line)
 			game->str_line = ft_strjoin_new(game->str_line, line);
+		free(line);
 	}
 	close(fd);
 }
@@ -106,19 +100,4 @@ int	setting_img(t_game *game)
 		hei++;
 	}
 	return (0);
-}
-
-void	check_first_line(t_game *game)
-{
-	size_t	wid;
-	char	alpha;
-
-	wid = 0;
-	while (wid < game->wid)
-	{
-		alpha = game->str_line[wid];
-		if (alpha != '1' && alpha != 'C' && alpha != 'P' && alpha != 'E')
-			ft_exit();
-		wid++;
-	}
 }

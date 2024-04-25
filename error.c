@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:12:23 by machi             #+#    #+#             */
-/*   Updated: 2024/04/18 18:32:46 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:59:34 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,6 @@ void	last_line(t_game *game)
 
 void	ft_exit(void)
 {
-	printf("Error\n");
+	ft_printf("Error\n");
 	exit(EXIT_FAILURE);
 }

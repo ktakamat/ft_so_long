@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:08:29 by machi             #+#    #+#             */
-/*   Updated: 2024/04/22 16:59:03 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:57:10 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*read_file(int fd, char *save)
 
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
-		return (NULL);
+		ft_exit();
 	while (!ft_strchr(save, '\n'))
 	{
 		result = read(fd, buf, BUFFER_SIZE);
@@ -50,7 +50,7 @@ char	*get_line(char *save)
 	}
 	line = (char *)malloc((sizeof(char) * (i + 2)));
 	if (!line)
-		return (NULL);
+		ft_exit();
 	ft_strlcpy(line, save, i + 2);
 	return (line);
 }
@@ -70,7 +70,7 @@ char	*reset_save(char *save)
 	}
 	save_new = (char *)malloc(sizeof(char) * (ft_strlen(save) - i));
 	if (!save_new)
-		return (NULL);
+		ft_exit();
 	ft_strlcpy(save_new, &save[i + 1], ft_strlen(save) - i);
 	free(save);
 	return (save_new);

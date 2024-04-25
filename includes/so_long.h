@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/24 19:58:32 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:42:30 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <string.h>
 # include <limits.h>
 # include <fcntl.h>
-# include	"../mlx/mlx.h"
+# include "../mlx/mlx.h"
 # include "../libft/libft.h"
 # include "../libft/ft_printf.h"
 # include <stdbool.h>
@@ -118,7 +118,7 @@ char	*get_next_line(int fd);
 char	*read_file(int fd, char *save);
 char	*get_line(char *save);
 char	*reset_save(char *save);
-char	*ft_strjoin_new(char const *s1, char const *s2);
+char	*ft_strjoin_new(char *s1, char const *s2);
 int		press_key(int key_code, t_game *game);
 void	move_w(t_game *g);
 void	move_s(t_game *g);

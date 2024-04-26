@@ -6,7 +6,7 @@
 /*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 19:09:50 by ktakamat          #+#    #+#             */
-/*   Updated: 2024/04/25 19:42:30 by ktakamat         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:26:42 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@
 # define KEY_S 1
 # define KEY_D 2
 # define FILE_EXTENSION ".ber"
-# define MAX_HEI 32
-# define MAX_WID 58
+# define MAX_HEI 28
+# define MAX_WID 52
 
 // # define LAND "./textures/land.xpm"
 // # define WALL "./textures/wall.xpm"
